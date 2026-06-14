@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alumni Network | ThriveWorks Ghana — Sunyani, Bono Region, Ghana</title>
+  <meta name="description" content="The ThriveWorks Ghana Alumni Network connects program graduates in Sunyani, Bono Region with continued learning, peer mentorship, career resources, and community leadership opportunities." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thriveworksghana.org/alumni" />
+  <meta property="og:title" content="Alumni Network | ThriveWorks Ghana" />
+  <meta property="og:description" content="Connecting ThriveWorks Ghana program graduates with continued learning, mentorship, and career resources in Ghana's Bono Region." />
+  <meta property="og:image" content="https://thriveworksghana.org/images/thriveworks-ghana-og.jpg" />
+  <meta property="og:locale" content="en_GH" />
+  <meta property="og:site_name" content="ThriveWorks Ghana" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@thriveworksgh" />
+  <meta name="twitter:title" content="Alumni Network | ThriveWorks Ghana" />
+  <meta name="twitter:description" content="Connecting ThriveWorks Ghana graduates with career resources and community in Ghana's Bono Region." />
+  <meta name="twitter:image" content="https://thriveworksghana.org/images/thriveworks-ghana-og.jpg" />
+  <link rel="canonical" href="https://thriveworksghana.org/alumni" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <meta name="theme-color" content="#1B2154" />
+
+  <!-- Structured Data for Google + AI -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Alumni Network — ThriveWorks Ghana",
+      "url": "https://thriveworksghana.org/alumni",
+      "description": "ThriveWorks Ghana's Alumni Network supports program graduates with continued learning, networking, mentorship, and career resources in Sunyani, Bono Region, Ghana.",
+      "isPartOf": {"@type": "WebSite", "url": "https://thriveworksghana.org", "name": "ThriveWorks Ghana"},
+      "about": {"@type": "Organization", "@id": "https://thriveworksghana.org/#organization", "name": "ThriveWorks Ghana"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thriveworksghana.org"},
+        {"@type": "ListItem", "position": 2, "name": "Alumni Network", "item": "https://thriveworksghana.org/alumni"}
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the ThriveWorks Ghana Alumni Network?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ThriveWorks Ghana Alumni Network is a community for graduates of ThriveWorks Ghana programs in Sunyani, Bono Region, Ghana. Alumni benefit from continued learning, networking events, peer mentorship, and career development resources to sustain their growth after completing the program."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I join the ThriveWorks Ghana Alumni Network?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Alumni Network is open to graduates of ThriveWorks Ghana's programs. Contact info@thriveworksghana.org or call +233209970207 to inquire about joining the alumni community in Sunyani, Ghana."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:  #1B2154;
+      --gold:  #C09A5A;
+      --cream: #F5EDE0;
+      --black: #0a0a0a;
+      --white: #ffffff;
+    }
+
+    body { font-family: 'Open Sans', sans-serif; background: var(--cream); color: #222; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ── HEADER ─────────────────────────────────────── */
+    header {
+      background: var(--navy);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .header-logo {
+      background: var(--white);
+      padding: 2px 8px;
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      height: 40px;
+      overflow: hidden;
+    }
+    .header-logo img { height: 85px; width: auto; max-width: none; display: block; border-radius: 0; }
+
+    .header-contact { text-align: center; color: var(--white); }
+    .header-contact p { font-size: 0.9rem; line-height: 1.9; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+    .hdr-btn {
+      border: 2px solid var(--white);
+      color: var(--white);
+      background: transparent;
+      padding: 12px 24px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .hdr-btn:hover { background: var(--white); color: var(--navy); }
+
+    /* ── MAIN ───────────────────────────────────────── */
+    .main-section {
+      background: var(--cream);
+      padding: 80px 60px 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .main-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 30px;
+    }
+
+    /* Two-column intro */
+    .alumni-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .alumni-intro-grid p {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    .alumni-hero-img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    /* ── BENEFITS SECTION ───────────────────────────── */
+    .benefits-section {
+      background: #C8D5B4; /* sage */
+      padding: 80px 40px;
+    }
+
+    .benefits-inner { max-width: 1100px; margin: 0 auto; }
+
+    .benefits-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 40px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .benefit-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 28px 22px;
+      text-align: center;
+    }
+
+    .benefit-icon {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+      line-height: 1;
+    }
+
+    .benefit-card h3 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .benefit-card p {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .alumni-photo-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .alumni-photo-row img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    /* ── ALUMNI CTA SECTION ─────────────────────────── */
+    .alumni-cta-section {
+      background: var(--cream);
+      padding: 80px 40px;
+    }
+
+    .alumni-cta-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .alumni-cta-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .alumni-cta-inner p {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 700px;
+    }
+
+    .alumni-cta-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .alumni-email-btn {
+      background: var(--navy);
+      color: var(--white);
+      border: 2px solid var(--navy);
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .alumni-email-btn:hover { background: transparent; color: var(--navy); }
+
+    .outline-btn {
+      border: 2px solid var(--navy);
+      color: var(--navy);
+      background: transparent;
+      padding: 14px 24px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      line-height: 1.4;
+      text-align: center;
+      transition: background 0.2s, color 0.2s;
+    }
+    .outline-btn:hover { background: var(--navy); color: var(--white); }
+
+    /* ── SOCIAL BAR ─────────────────────────────────── */
+    .social-bar {
+      background: var(--navy);
+      padding: 22px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .soc-box {
+      width: 34px; height: 34px;
+      border: 2px solid var(--gold); border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-weight: 700; font-size: 0.85rem;
+      cursor: pointer; transition: opacity 0.2s;
+    }
+    .soc-box:hover { opacity: 0.7; }
+
+    .soc-icon { color: var(--gold); font-size: 1.4rem; cursor: pointer; transition: opacity 0.2s; }
+    .soc-icon:hover { opacity: 0.7; }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      padding: 40px 40px 28px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-center { text-align: center; }
+    .footer-center a {
+      display: block; color: var(--white); font-weight: 700;
+      font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 18px;
+    }
+    .footer-contact { color: var(--white); font-size: 0.85rem; line-height: 2; text-align: center; }
+
+    .footer-affiliate { text-align: right; }
+    .affiliate-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #999; margin-bottom: 8px; }
+    .footer-affiliate img { height: 38px; width: auto; margin-left: auto; }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 900px) {
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .alumni-photo-row { grid-template-columns: repeat(2, 1fr); }
+      .alumni-photo-row img:last-child { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      header { flex-direction: column; text-align: center; padding: 20px 16px; }
+      header > div:last-child { justify-content: center; }
+      .main-section { padding: 50px 20px 50px; }
+      .main-section h1 { font-size: 2.2rem; }
+      .alumni-intro-grid { grid-template-columns: 1fr; }
+      .alumni-hero-img { height: 240px; }
+      .benefits-section { padding: 50px 20px; }
+      .alumni-cta-section { padding: 50px 20px; }
+      .alumni-cta-buttons { flex-direction: column; align-items: flex-start; }
+      footer { grid-template-columns: 1fr; text-align: center; }
+      .footer-affiliate { text-align: center; }
+      .footer-affiliate img { margin: 0 auto; }
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 16px 12px; gap: 12px; }
+      .header-contact p { font-size: 0.8rem; flex-wrap: wrap; justify-content: center; }
+      .main-section { padding: 36px 16px 40px; }
+      .main-section h1 { font-size: 1.9rem; }
+      .benefits-section h2 { font-size: 2rem; }
+      .alumni-cta-inner h2 { font-size: 1.8rem; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .alumni-photo-row { grid-template-columns: 1fr; }
+      .alumni-photo-row img { display: block; }
+      .hdr-btn { padding: 9px 16px; font-size: 0.75rem; }
+    }
+
+    /* ── PATHFINDER COMPASS (sticky) ─────────────────────── */
+    #pathfinder {
+      position: fixed; bottom: 30px; right: 28px; z-index: 9999;
+      display: flex; flex-direction: column-reverse; align-items: flex-end; gap: 10px;
+    }
+    .pf-toggle {
+      width: 62px; height: 62px; border-radius: 50%;
+      background: var(--navy); border: 2.5px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; box-shadow: 0 4px 18px rgba(0,0,0,0.28);
+      transition: transform 0.25s, box-shadow 0.25s; position: relative; flex-shrink: 0;
+    }
+    .pf-toggle:hover { transform: scale(1.08); box-shadow: 0 6px 26px rgba(0,0,0,0.38); }
+    .pf-rose { width: 34px; height: 34px; animation: roseRotate 10s linear infinite; }
+    @keyframes roseRotate { to { transform: rotate(360deg); } }
+    #pathfinder.pf-open .pf-rose { animation-play-state: paused; }
+    .pf-label {
+      position: absolute; right: 70px; background: var(--navy); color: var(--white);
+      font-family: 'Open Sans', sans-serif; font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase; padding: 5px 9px; border-radius: 3px;
+      white-space: nowrap; opacity: 0; transform: translateX(8px);
+      transition: opacity 0.18s, transform 0.18s; pointer-events: none;
+    }
+    .pf-label::after {
+      content: ''; position: absolute; left: 100%; top: 50%;
+      transform: translateY(-50%); border: 5px solid transparent; border-left-color: var(--navy);
+    }
+    #pathfinder:not(.pf-open) .pf-toggle:hover .pf-label { opacity: 1; transform: translateX(0); }
+    .pf-panel {
+      background: #fff; border-radius: 12px; padding: 20px 18px 16px; width: 272px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.18); border: 1px solid rgba(192,154,90,0.25);
+      opacity: 0; transform: translateY(12px) scale(0.96); pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease; position: relative;
+    }
+    #pathfinder.pf-open .pf-panel { opacity: 1; transform: translateY(0) scale(1); pointer-events: all; }
+    .pf-close {
+      position: absolute; top: 9px; right: 10px; background: none; border: none;
+      font-size: 0.95rem; color: #aaa; cursor: pointer; line-height: 1; transition: color 0.15s;
+    }
+    .pf-close:hover { color: var(--navy); }
+    .pf-panel-heading { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400; color: var(--navy); margin-bottom: 14px; padding-right: 20px; }
+    .pf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+    .pf-card {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 11px 7px; border-radius: 8px; border: 2px solid transparent;
+      text-decoration: none; transition: transform 0.16s, border-color 0.16s;
+    }
+    .pf-card:hover { transform: translateY(-3px); }
+    .pf-digital { background: #e8f0fd; } .pf-digital:hover { border-color: #4a6fa5; }
+    .pf-bizdev  { background: #fef8e7; } .pf-bizdev:hover  { border-color: var(--gold); }
+    .pf-coach   { background: #eaf5ea; } .pf-coach:hover   { border-color: #5a9a5a; }
+    .pf-alumni  { background: #fdf0f0; } .pf-alumni:hover  { border-color: #c04a4a; }
+    .pf-card-icon { font-size: 1.55rem; margin-bottom: 4px; line-height: 1; }
+    .pf-card-name { font-weight: 700; font-size: 0.68rem; color: var(--navy); margin-bottom: 2px; line-height: 1.2; }
+    .pf-card-sub { font-size: 0.6rem; color: #777; line-height: 1.3; }
+    @media (max-width: 480px) { #pathfinder { bottom: 18px; right: 14px; } .pf-panel { width: 240px; } }
+    #wa-widget { position: fixed; bottom: 30px; left: 28px; z-index: 9999; }
+    .wa-btn { width: 62px; height: 62px; border-radius: 50%; background: #25D366; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 18px rgba(37,211,102,0.4); transition: transform 0.25s, box-shadow 0.25s; text-decoration: none; position: relative; flex-shrink: 0; }
+    .wa-btn:hover { transform: scale(1.1); box-shadow: 0 6px 26px rgba(37,211,102,0.55); }
+    .wa-icon { width: 34px; height: 34px; }
+    .wa-tooltip { position: absolute; left: 70px; background: #1a9e4a; color: #fff; font-family: 'Open Sans', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 5px 9px; border-radius: 3px; white-space: nowrap; opacity: 0; transform: translateX(-8px); transition: opacity 0.18s, transform 0.18s; pointer-events: none; }
+    .wa-tooltip::before { content: ''; position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 5px solid transparent; border-right-color: #1a9e4a; }
+    .wa-btn:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
+    #growth-plant { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 9998; }
+    .gp-inner { background: var(--navy); border-radius: 0 14px 14px 0; padding: 16px 10px; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; box-shadow: 3px 3px 20px rgba(0,0,0,0.22); transition: transform 0.2s; width: 68px; user-select: none; }
+    .gp-inner:hover { transform: translateX(5px); }
+    .gp-stage { font-size: 2rem; line-height: 1; display: block; transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .gp-stage.pop { transform: scale(1.45); }
+    .gp-track { width: 42px; height: 4px; background: rgba(255,255,255,0.18); border-radius: 2px; overflow: hidden; }
+    .gp-fill { height: 100%; width: 0%; background: var(--gold); border-radius: 2px; transition: width 0.35s ease; }
+    .gp-label { font-family: 'Open Sans', sans-serif; font-size: 0.46rem; font-weight: 700; letter-spacing: 0.7px; text-transform: uppercase; color: rgba(255,255,255,0.65); text-align: center; line-height: 1.4; }
+    @media (max-width: 768px) { #growth-plant { display: none; } }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ HEADER ════════════════════════════════════════════ -->
+  <header>
+    <a href="index.html" class="header-logo">
+      <img src="images/thriveworks-logo.png" alt="ThriveWorks Ghana — Access. Opportunity. Service." style="height:56px; width:auto; border-radius:0;" />
+    </a>
+    <div class="header-contact">
+      <p>📞 USA (215) 253-7658 &nbsp;|&nbsp; Ghana 020 9970 207</p>
+      <p>✉ info@thriveworksghana.org</p>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;">
+      <a href="get-involved.html"><button class="hdr-btn">Get Involved</button></a>
+      <a href="https://app.thriveworksghana.org" target="_blank" rel="noopener"><button class="hdr-btn" style="border-color:var(--gold);color:var(--gold);">Staff Login</button></a>
+    </div>
+  </header>
+
+
+  <!-- ═══ MAIN ══════════════════════════════════════════════ -->
+  <div class="main-section">
+
+    <div>
+      <h1>Alumni Network</h1>
+
+      <!-- Two-column: text left, photo right -->
+      <div class="alumni-intro-grid">
+        <div>
+          <p>
+            We maintain an engaging and supportive alumni network, with opportunities for continued learning,
+            networking, and mentorship. There's also access to resources and benefits to facilitate career
+            growth and community involvement.
+          </p>
+          <p>
+            Graduates of ThriveWorks Ghana's programs — Technical Skills, Mentorship, and Entrepreneurship
+            Development — automatically become part of our alumni community. We stay connected through regular
+            meetups, group learning sessions, and peer referrals that turn individual success into shared opportunity.
+          </p>
+        </div>
+        <img src="images/mentorship-main.jpg" alt="ThriveWorks Ghana Alumni and Community Members" class="alumni-hero-img" />
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ═══ ALUMNI BENEFITS — SAGE SECTION ══════════════════════ -->
+  <section class="benefits-section">
+    <div class="benefits-inner">
+
+      <h2>What Alumni Get</h2>
+
+      <div class="benefits-grid">
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🎓</div>
+          <h3>Continued Learning</h3>
+          <p>Access to advanced workshops, refresher training, and new skills modules as programs evolve.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <h3>Peer Mentorship</h3>
+          <p>Senior alumni mentor newer graduates, creating a culture of generosity and shared growth within the community.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">💼</div>
+          <h3>Career Resources</h3>
+          <p>Job referrals, client introductions, and employer connections channelled directly through the alumni network.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">🌱</div>
+          <h3>Community Leadership</h3>
+          <p>Opportunities to lead sessions, represent ThriveWorks Ghana at community events, and shape future program design.</p>
+        </div>
+
+      </div>
+
+      <!-- Photo row -->
+      <div class="alumni-photo-row">
+        <img src="images/program-1.jpg" alt="ThriveWorks Ghana technical skills alumni" loading="lazy" />
+        <img src="images/program-2.jpg" alt="ThriveWorks Ghana mentorship alumni" loading="lazy" />
+        <img src="images/program-3.jpg" alt="ThriveWorks Ghana entrepreneurship alumni" loading="lazy" />
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ APPLY / JOIN CTA ════════════════════════════════════ -->
+  <div class="alumni-cta-section">
+    <div class="alumni-cta-inner">
+      <h2>Join the Alumni Network</h2>
+      <p>
+        Already completed a ThriveWorks Ghana program? Reach out to us to be added to the alumni
+        community and stay connected to your cohort, your mentors, and new opportunities.
+      </p>
+      <div class="alumni-cta-buttons">
+        <a href="mailto:info@thriveworksghana.org">
+          <button class="alumni-email-btn">Email Us to Join</button>
+        </a>
+        <a href="get-involved.html">
+          <button class="outline-btn">Other Ways to Support</button>
+        </a>
+        <a href="https://give.urbanpromiseinternational.org/campaign/680516/donate" target="_blank" rel="noopener">
+          <button class="outline-btn">Donate</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══ SOCIAL BAR ════════════════════════════════════════ -->
+  <div class="social-bar">
+    <a href="https://www.linkedin.com/company/thriveworksghana/" target="_blank" rel="noopener"><div class="soc-box">in</div></a>
+    <a href="https://www.facebook.com/thriveworksgh?mibextid=LQQJ4d" target="_blank" rel="noopener"><div class="soc-icon">f</div></a>
+    <a href="https://www.instagram.com/thriveworksghana/profilecard/?igsh=MTM2OXYyNHptdDE1MA==" target="_blank" rel="noopener"><div class="soc-icon">◎</div></a>
+    <a href="https://x.com/thriveworksgh?s=21&amp;t=RCzyF7LQWErMTZ4UFGTHkg" target="_blank" rel="noopener"><div class="soc-icon">𝕏</div></a>
+    <a href="https://youtube.com/@thriveworksghana?si=6fGmpRn3yh3gW1iC" target="_blank" rel="noopener"><div class="soc-icon" style="color:#FF0000;">▶</div></a>
+    <a href="mailto:info@thriveworksghana.org"><div class="soc-icon">✉</div></a>
+  </div>
+
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════ -->
+  <footer>
+    <div></div>
+    <div class="footer-center">
+      <a href="index.html">Home</a>
+      <div class="footer-contact">
+        <p>USA (215) 253-7658 &nbsp;|&nbsp; Ghana 020 9970 207</p>
+        <p>info@thriveworksghana.org</p>
+      </div>
+    </div>
+    <div class="footer-affiliate">
+      <div class="affiliate-label">An Affiliate of</div>
+      <a href="https://urbanpromiseinternational.org" target="_blank" rel="noopener"><img src="images/urban-promise-logo.png" alt="Urban Promise International" loading="lazy" /></a>
+    </div>
+  </footer>
+
+
+  <!-- ═══ WHATSAPP WIDGET ════════════════════════════════ -->
+  <div id="wa-widget">
+    <a class="wa-btn" href="https://wa.me/233209970207" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <svg class="wa-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" r="22" fill="#25D366"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M22 9C14.82 9 9 14.82 9 22c0 2.64.75 5.11 2.06 7.2L9 35l6.02-1.97A13 13 0 0022 35c7.18 0 13-5.82 13-13S29.18 9 22 9zm7.3 17.77c-.3.84-1.76 1.6-2.43 1.7-.62.09-1.4.13-2.27-.14a20.5 20.5 0 01-2.06-.76c-3.62-1.56-5.98-5.2-6.16-5.44-.18-.24-1.48-1.97-1.48-3.76 0-1.79.94-2.67 1.27-3.03.33-.36.72-.45.96-.45l.69.01c.22.01.52-.08.81.62l1.12 2.72c.1.23.05.5-.12.7l-.6.68c-.19.21-.38.44-.16.87.22.43.98 1.62 2.1 2.62 1.44 1.28 2.65 1.68 3.02 1.87.37.19.59.16.8-.1l.72-.84c.2-.24.5-.3.82-.17l2.62 1.23c.3.14.5.21.57.33.07.12.07.7-.23 1.54z" fill="#fff"/>
+      </svg>
+      <span class="wa-tooltip">Chat with us</span>
+    </a>
+  </div>
+  <div id="growth-plant">
+    <div class="gp-inner" onclick="growPlant()">
+      <span class="gp-stage" id="gp-stage">🌱</span>
+      <div class="gp-track"><div class="gp-fill" id="gp-fill"></div></div>
+      <span class="gp-label" id="gp-label">Tap to<br>grow</span>
+    </div>
+  </div>
+  <script>(function(){var s=['🌱','🌿','🪴','🌳','🎉'],m=['Tap to<br>grow','Growing!','Thriving!','Flourishing!','Amazing!'],i=0;window.growPlant=function(){var el=document.getElementById('gp-stage'),fill=document.getElementById('gp-fill'),lbl=document.getElementById('gp-label');i++;if(i>=s.length){el.textContent='🎉';fill.style.width='100%';lbl.innerHTML='You did it!';el.classList.add('pop');setTimeout(function(){el.classList.remove('pop');},400);setTimeout(function(){i=0;el.textContent=s[0];fill.style.width='0%';lbl.innerHTML='Tap to<br>grow';},1800);}else{el.textContent=s[i];fill.style.width=Math.round((i/(s.length-1))*100)+'%';lbl.innerHTML=m[i];el.classList.add('pop');setTimeout(function(){el.classList.remove('pop');},400);}};})();</script>
+
+  <!-- ═══ PATHFINDER (sticky compass) ════════════════════ -->
+  <div id="pathfinder">
+    <button class="pf-toggle" onclick="document.getElementById('pathfinder').classList.toggle('pf-open')" aria-label="Explore Programs">
+      <svg class="pf-rose" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="22,2 25,20 22,22 19,20" fill="#C09A5A"/>
+        <polygon points="42,22 24,25 22,22 24,19" fill="#C09A5A" opacity="0.65"/>
+        <polygon points="22,42 19,24 22,22 25,24" fill="#C09A5A" opacity="0.45"/>
+        <polygon points="2,22 20,19 22,22 20,25" fill="#C09A5A" opacity="0.65"/>
+        <circle cx="22" cy="22" r="3.5" fill="#ffffff"/>
+      </svg>
+      <span class="pf-label">Find Your Path</span>
+    </button>
+    <div class="pf-panel">
+      <button class="pf-close" onclick="document.getElementById('pathfinder').classList.remove('pf-open')" aria-label="Close">✕</button>
+      <p class="pf-panel-heading">Where does your path lead?</p>
+      <div class="pf-grid">
+        <a href="technical-skills.html" class="pf-card pf-digital">
+          <div class="pf-card-icon">💻</div>
+          <div class="pf-card-name">Technical Skills</div>
+          <div class="pf-card-sub">Digital &amp; Trade</div>
+        </a>
+        <a href="entrepreneurship.html" class="pf-card pf-bizdev">
+          <div class="pf-card-icon">💡</div>
+          <div class="pf-card-name">Entrepreneurship</div>
+          <div class="pf-card-sub">Start your business</div>
+        </a>
+        <a href="mentorship.html" class="pf-card pf-coach">
+          <div class="pf-card-icon">🤝</div>
+          <div class="pf-card-name">Mentorship</div>
+          <div class="pf-card-sub">Career coaching</div>
+        </a>
+        <a href="alumni.html" class="pf-card pf-alumni">
+          <div class="pf-card-icon">🎓</div>
+          <div class="pf-card-name">Alumni Network</div>
+          <div class="pf-card-sub">Community &amp; growth</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

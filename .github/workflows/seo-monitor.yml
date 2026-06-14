@@ -1,0 +1,131 @@
+name: SEO & Performance Monitor
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Weekly Lighthouse audit — every Monday at 8:00 AM UTC
+    - cron: '0 8 * * 1'
+    # Monthly sitemap date refresh — 1st of every month at 6:00 AM UTC
+    - cron: '0 6 1 * *'
+
+jobs:
+  # ── 1. PING SEARCH ENGINES ─────────────────────────────────────────────────
+  # Runs on every push so Google + Bing learn about updates immediately.
+  ping-search-engines:
+    name: Ping Google & Bing with sitemap
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - name: Ping Google
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://www.google.com/ping?sitemap=https://thriveworksghana.org/sitemap.xml")
+          echo "Google ping → HTTP $STATUS"
+
+      - name: Ping Bing
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://www.bing.com/ping?sitemap=https://thriveworksghana.org/sitemap.xml")
+          echo "Bing ping → HTTP $STATUS"
+
+  # ── 2. LIGHTHOUSE CI ────────────────────────────────────────────────────────
+  # Runs weekly and audits every public page. Results are uploaded as artifacts
+  # so you can download the HTML report from the Actions tab.
+  lighthouse:
+    name: Lighthouse performance audit
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Audit — Home
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: https://thriveworksghana.org
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 1
+
+      - name: Audit — Technical Skills
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: https://thriveworksghana.org/technical-skills
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 1
+
+      - name: Audit — Entrepreneurship
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: https://thriveworksghana.org/entrepreneurship
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 1
+
+      - name: Audit — Mentorship
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: https://thriveworksghana.org/mentorship
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 1
+
+      - name: Audit — Alumni
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: https://thriveworksghana.org/alumni
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 1
+
+      - name: Audit — Our Journey
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: https://thriveworksghana.org/journey
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 1
+
+      - name: Audit — Get Involved
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: https://thriveworksghana.org/get-involved
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 1
+
+  # ── 3. REFRESH SITEMAP DATES ────────────────────────────────────────────────
+  # Runs on the 1st of each month. Updates all <lastmod> dates in sitemap.xml
+  # so Google sees the site as freshly maintained, then commits back to main.
+  refresh-sitemap:
+    name: Update sitemap lastmod dates
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update lastmod to today
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          sed -i "s|<lastmod>[0-9-]*</lastmod>|<lastmod>$TODAY</lastmod>|g" sitemap.xml
+          echo "Updated sitemap lastmod to $TODAY"
+
+      - name: Commit updated sitemap
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh sitemap lastmod dates"
+          file_pattern: sitemap.xml
+          commit_user_name: "SEO Monitor Bot"
+          commit_user_email: "actions@github.com"
+
+      - name: Ping search engines after refresh
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://thriveworksghana.org/sitemap.xml" \
+            -o /dev/null -w "Google ping → HTTP %{http_code}\n"
+          curl -s "https://www.bing.com/ping?sitemap=https://thriveworksghana.org/sitemap.xml" \
+            -o /dev/null -w "Bing ping → HTTP %{http_code}\n"
