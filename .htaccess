@@ -11,6 +11,9 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.thriveworksghana\.org$ [NC]
 RewriteRule ^ https://thriveworksghana.org%{REQUEST_URI} [R=301,L]
 
+# 2.5. Redirect /index and /index.html to root
+RewriteRule ^index(\.html)?/?$ / [R=301,L]
+
 # 3. Redirect /page.html → /page (clean URLs, 301 permanent)
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
