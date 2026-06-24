@@ -1,0 +1,87 @@
+/* ── ThriveWorks Ghana — Cookie Consent Banner ──────────────────── */
+
+#cookie-consent-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10001;
+  background: #1B2154; /* --navy */
+  color: #F5EDE0; /* --cream */
+  padding: 18px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  box-shadow: 0 -4px 18px rgba(0,0,0,0.3);
+}
+
+#cookie-consent-banner .cc-text {
+  flex: 1 1 320px;
+  max-width: 680px;
+  margin: 0;
+}
+
+#cookie-consent-banner .cc-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+#cookie-consent-banner .cc-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+#cookie-consent-banner .cc-btn:hover {
+  transform: translateY(-1px);
+}
+
+#cookie-consent-banner .cc-btn-accept {
+  background: #C09A5A; /* --gold */
+  color: #1B2154; /* --navy */
+}
+
+#cookie-consent-banner .cc-btn-reject {
+  background: transparent;
+  color: #F5EDE0;
+  border: 1.5px solid rgba(245, 237, 224, 0.5);
+}
+
+@media (max-width: 600px) {
+  #cookie-consent-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+  }
+  #cookie-consent-banner .cc-actions {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.cc-footer-link {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.cc-footer-link a {
+  color: rgba(245, 237, 224, 0.55);
+  font-size: 0.72rem;
+  text-decoration: underline;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.cc-footer-link a:hover {
+  color: rgba(245, 237, 224, 0.85);
+}
