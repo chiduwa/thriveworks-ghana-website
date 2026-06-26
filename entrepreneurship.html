@@ -15,10 +15,18 @@ gtag('consent', 'default', {
   wait_for_update: 500
 });
 
-// Analytics: denied by default only where opt-in consent is legally required
-// (EEA + UK + Switzerland). Google tag detects the visitor's region itself and
-// matches it against this list. Everywhere else, analytics stays on by default
-// so we keep visibility into the bulk of our traffic (Ghana, US, diaspora donors).
+// Analytics: granted by default everywhere, so we keep visibility into the bulk
+// of our traffic (Ghana, US, diaspora donors). Leaving a type out of every default
+// call does NOT fall back to granted once consent mode is active on the page — it
+// is left unresolved and effectively blocks measurement, so this rule must be explicit.
+gtag('consent', 'default', {
+  analytics_storage: 'granted'
+});
+
+// ...except in regions where opt-in consent is legally required (EEA + UK +
+// Switzerland) — there analytics stays denied until the visitor clicks Accept.
+// Google tag detects the visitor's region itself and matches it against this list;
+// being more specific than the global rule above, this one wins for those visitors.
 gtag('consent', 'default', {
   analytics_storage: 'denied',
   region: [
