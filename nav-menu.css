@@ -1,0 +1,94 @@
+/* ── ThriveWorks Ghana — Site navigation menu (hamburger drawer) ────── */
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+.menu-toggle.is-open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.site-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.site-menu-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.site-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100%;
+  background: #1B2154; /* --navy */
+  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.25);
+  z-index: 901;
+  display: flex;
+  flex-direction: column;
+  padding: 90px 24px 28px;
+  gap: 4px;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+}
+
+.site-menu.is-open {
+  right: 0;
+}
+
+.site-menu-link {
+  display: block;
+  color: #F5EDE0; /* --cream */
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 14px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.site-menu-link:hover {
+  background: rgba(245, 237, 224, 0.08);
+}
+
+.site-menu-link.active {
+  color: #C09A5A; /* --gold */
+  background: rgba(192, 154, 90, 0.12);
+}
+
+@media (max-width: 480px) {
+  .site-menu {
+    width: 100%;
+    right: -100%;
+  }
+}

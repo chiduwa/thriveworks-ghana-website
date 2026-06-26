@@ -48,6 +48,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <link rel="stylesheet" href="cookie-consent.css" />
 <script src="cookie-consent.js" defer></script>
+<link rel="stylesheet" href="nav-menu.css" />
+<script src="nav-menu.js" defer></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Story | Kwame Owusu-Ansah & ThriveWorks Ghana, Sunyani, Bono Region</title>
@@ -477,8 +479,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div style="display:flex;gap:10px;align-items:center;">
       <a href="/get-involved"><button class="hdr-btn">Get Involved</button></a>
       <a href="https://app.thriveworksghana.org" target="_blank" rel="noopener"><button class="hdr-btn" style="border-color:var(--gold);color:var(--gold);">Staff Login</button></a>
+      <button type="button" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+  <div class="site-menu-overlay"></div>
+  <div class="site-menu" id="site-menu" aria-hidden="true">
+    <a href="/" class="site-menu-link">Home</a>
+    <a href="/journey" class="site-menu-link active" aria-current="page">Our Story</a>
+    <a href="/entrepreneurship" class="site-menu-link">Entrepreneurship</a>
+    <a href="/technical-skills" class="site-menu-link">Technical Skills</a>
+    <a href="/mentorship" class="site-menu-link">Mentorship</a>
+    <a href="/alumni" class="site-menu-link">Alumni Network</a>
+    <a href="/get-involved" class="site-menu-link">Get Involved</a>
+  </div>
+
 
 
   <!-- ═══ THE JOURNEY THUS FAR ══════════════════════════════ -->
