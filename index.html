@@ -274,13 +274,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* ── NAVIGATION ─────────────────────────────────── */
     nav {
-      position: absolute;
+      position: fixed;
       top: 0; left: 0; right: 0;
-      z-index: 100;
+      z-index: 500;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 20px 40px;
+      background: transparent;
+      transition: background 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease;
+    }
+    nav.nav-scrolled {
+      background: var(--navy);
+      padding: 12px 40px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
     }
 
     .logo-box {
@@ -1520,5 +1527,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
+  <script>
+    (function () {
+      var nav = document.querySelector('nav');
+      function onScroll() {
+        if (window.scrollY > 40) {
+          nav.classList.add('nav-scrolled');
+        } else {
+          nav.classList.remove('nav-scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>
