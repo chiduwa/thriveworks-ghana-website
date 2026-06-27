@@ -53,9 +53,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Impact | ThriveWorks Ghana — Youth Empowerment Results</title>
-  <meta name="description" content="See ThriveWorks Ghana's live impact numbers — youth served, programs run, graduates, regions reached, and total invested in youth empowerment programs in Sunyani, Bono Region, Ghana." />
+  <meta name="description" content="142 youth trained since 2021 across 5 key industries — Building &amp; Construction, Textiles, Personal Care, Technology, and Entrepreneurship. See ThriveWorks Ghana's training breakdown, our holistic 3-year apprenticeship model, and live program numbers from Sunyani, Bono Region, Ghana." />
   <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="ThriveWorks Ghana impact, nonprofit results Ghana, youth empowerment statistics Ghana, NGO impact data Sunyani, best nonprofit results Ghana, measurable impact NGO Ghana, top youth organisation impact West Africa" />
+  <meta name="keywords" content="ThriveWorks Ghana impact, nonprofit results Ghana, youth empowerment statistics Ghana, NGO impact data Sunyani, best nonprofit results Ghana, measurable impact NGO Ghana, top youth organisation impact West Africa, digital skills training Ghana, apprenticeship program Ghana" />
   <meta name="author"   content="ThriveWorks Ghana" />
   <meta name="subject"        content="Nonprofit organisation, effective charity, high-impact NGO, youth empowerment, Ghana, West Africa, Africa" />
   <meta name="classification" content="Nonprofit, NGO, Charity, Youth Development, Community Impact, Ghana, Africa" />
@@ -107,7 +107,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           "name": "How many youth has ThriveWorks Ghana served?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ThriveWorks Ghana tracks live aggregate numbers of youth served, program graduates, and regions reached on our Our Impact page, updated directly from our program data."
+            "text": "ThriveWorks Ghana has trained 142 youth since 2021 across five key industries: Building & Construction, Textiles & Apparel, Personal Care, Technology, and Entrepreneurship. We also track live aggregate numbers of youth served, program graduates, and regions reached on our Our Impact page as our program records are digitized."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does ThriveWorks Ghana's Digital Skills training cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ThriveWorks Ghana's Digital Skills track covers core IT literacy (Microsoft Word, Excel, and PowerPoint), design tools (Canva and Photoshop), and forward-looking AI-assisted skills including sound and video editing and generation, and introductory AI-assisted coding ('vibe coding') using tools like VS Code and Cursor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a ThriveWorks Ghana apprenticeship last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ThriveWorks Ghana's apprenticeship programs are holistic and long-term, running up to 3 years. We provide trainees with tools and resources, continued mentorship, and ongoing monitoring and evaluation to support durable outcomes well beyond graduation."
           }
         },
         {
@@ -115,7 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           "name": "Is ThriveWorks Ghana's impact data transparent?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — ThriveWorks Ghana publishes live, aggregate program statistics on our Our Impact page, including beneficiaries served, graduates, regions reached, and total amount invested in our youth empowerment programs in Sunyani, Bono Region, Ghana."
+            "text": "Yes — ThriveWorks Ghana publishes both our cumulative program milestones and live, aggregate program statistics on our Our Impact page, including beneficiaries served, graduates, regions reached, and total amount invested in our youth empowerment programs in Sunyani, Bono Region, Ghana."
           }
         }
       ]
@@ -225,6 +241,154 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: #777;
       margin-top: 10px;
     }
+
+    /* ── MILESTONE BAND (cumulative, since 2021) ─────── */
+    .milestone-band {
+      background: var(--gold);
+      padding: 44px 40px;
+    }
+    .milestone-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      text-align: center;
+    }
+    .milestone-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+    .milestone-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--navy);
+      opacity: 0.8;
+      margin-top: 6px;
+    }
+
+    /* ── SECTION SHELLS reused across new content blocks ── */
+    .section-shell {
+      padding: 70px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-shell h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .section-shell > p.section-intro {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.8;
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+    .section-shell.on-navy h2 { color: var(--white); }
+    .section-shell.on-navy { background: var(--navy); }
+    .section-shell.on-navy > p.section-intro { color: rgba(245,237,224,0.85); }
+
+    /* ── TRAINING PROGRAMS BREAKDOWN ─────────────────── */
+    .program-bars { display: flex; flex-direction: column; gap: 16px; }
+    .program-bar-row { display: grid; grid-template-columns: 160px 1fr 70px; align-items: center; gap: 14px; }
+    .program-bar-name { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+    .program-bar-track { height: 14px; background: rgba(27,33,84,0.08); border-radius: 7px; overflow: hidden; }
+    .program-bar-fill { height: 100%; background: var(--gold); border-radius: 7px; }
+    .program-bar-count { font-size: 0.85rem; font-weight: 700; color: var(--navy); text-align: right; }
+    .program-bars-note { font-size: 0.78rem; color: #777; margin-top: 18px; }
+
+    /* ── DIGITAL SKILLS CURRICULUM GRID ──────────────── */
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .curriculum-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(192,154,90,0.3);
+      border-radius: 10px;
+      padding: 26px 22px;
+    }
+    .curriculum-card h3 {
+      font-size: 1.02rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+    }
+    .curriculum-card p {
+      font-size: 0.85rem;
+      color: rgba(245,237,224,0.85);
+      line-height: 1.65;
+    }
+
+    /* ── HOLISTIC / LONG-TERM SUPPORT ────────────────── */
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .support-card { text-align: center; padding: 8px; }
+    .support-card .support-icon { font-size: 2rem; margin-bottom: 10px; }
+    .support-card h3 { font-size: 0.92rem; color: var(--navy); margin-bottom: 8px; font-weight: 700; }
+    .support-card p { font-size: 0.82rem; color: #555; line-height: 1.6; }
+
+    /* ── JOURNEY STRIP ────────────────────────────────── */
+    .journey-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .journey-step { padding: 0 6px; }
+    .journey-year { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 6px; }
+    .journey-step p { font-size: 0.82rem; color: #444; line-height: 1.6; }
+    .journey-link { font-size: 0.85rem; font-weight: 700; color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+
+    /* ── NEWSLETTER CARD ──────────────────────────────── */
+    .newsletter-card {
+      background: var(--white);
+      border: 1px solid rgba(27,33,84,0.12);
+      border-radius: 12px;
+      padding: 30px 32px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .newsletter-meta { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .newsletter-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 12px; }
+    .newsletter-excerpt { font-size: 0.9rem; color: #444; line-height: 1.7; margin-bottom: 18px; }
+    .newsletter-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    .newsletter-iframe-wrap { display: none; margin-top: 20px; border: 1px solid rgba(27,33,84,0.12); border-radius: 8px; overflow: hidden; }
+    .newsletter-iframe-wrap.is-open { display: block; }
+    .newsletter-iframe-wrap iframe { width: 100%; height: 600px; border: none; display: block; }
+    .text-link-btn { background: none; border: none; padding: 0; font-weight: 700; font-size: 0.85rem; color: var(--navy); border-bottom: 2px solid var(--gold); cursor: pointer; font-family: inherit; }
+
+    /* ── SOCIAL / FOLLOW SECTION ──────────────────────── */
+    .social-section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    .follow-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .follow-card {
+      display: flex; align-items: center; gap: 12px;
+      border: 1px solid rgba(27,33,84,0.12); border-radius: 10px;
+      padding: 16px; transition: border-color 0.2s, transform 0.2s;
+    }
+    .follow-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .follow-card .follow-icon { font-size: 1.3rem; color: var(--navy); width: 30px; text-align: center; flex-shrink: 0; }
+    .follow-card .follow-name { font-weight: 700; font-size: 0.85rem; color: var(--navy); }
+    .follow-card .follow-handle { font-size: 0.75rem; color: #777; }
+    .fb-embed-wrap { min-height: 280px; }
 
     /* ── BY THE NUMBERS SECTION ─────────────────────── */
     .numbers-section {
@@ -515,6 +679,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @media (max-width: 900px) {
       .stats-grid, .skeleton-grid { grid-template-columns: repeat(2, 1fr); }
       .secondary-grid { grid-template-columns: 1fr; }
+      .milestone-inner { grid-template-columns: 1fr; gap: 24px; }
+      .curriculum-grid { grid-template-columns: 1fr; }
+      .support-grid { grid-template-columns: repeat(2, 1fr); }
+      .journey-strip { grid-template-columns: repeat(2, 1fr); }
+      .social-section-grid { grid-template-columns: 1fr; }
+      .follow-cards { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -529,6 +699,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       footer { grid-template-columns: 1fr; text-align: center; }
       .footer-affiliate { text-align: center; }
       .footer-affiliate img { margin: 0 auto; }
+      .section-shell { padding: 50px 20px; }
+      .program-bar-row { grid-template-columns: 1fr; gap: 6px; }
+      .program-bar-count { text-align: left; }
     }
 
     @media (max-width: 480px) {
@@ -541,6 +714,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .stats-grid, .skeleton-grid { grid-template-columns: 1fr; }
       .hdr-btn { padding: 9px 16px; font-size: 0.75rem; }
       .stat-number { font-size: 2.1rem; }
+      .support-grid { grid-template-columns: 1fr; }
+      .journey-strip { grid-template-columns: 1fr; }
+      .milestone-number { font-size: 2.2rem; }
     }
 
     /* ── PATHFINDER COMPASS (sticky) ─────────────────────── */
@@ -630,6 +806,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQKMT4Q5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<!-- Facebook Page Plugin SDK — public embed, no app registration needed.
+     If blocked (ad blockers commonly block connect.facebook.net) the
+     .fb-page div's <blockquote> fallback (a plain link to our Facebook
+     page) shows instead, so this never breaks the page. -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
   <!-- ═══ HEADER ════════════════════════════════════════════ -->
   <header>
     <a href="/" class="header-logo">
@@ -665,20 +846,169 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="impact-hero">
     <h1>Our Impact</h1>
     <p>
-      Real outcomes from our programs. ThriveWorks Ghana publishes live, aggregate numbers
-      drawn directly from our program data — no estimates, no rounding up. Here's what our
-      technical skills, mentorship, and entrepreneurship programs have achieved so far for
-      underserved youth in Sunyani, Bono Region, Ghana.
+      Real outcomes from our programs. Since 2021, ThriveWorks Ghana has trained underserved
+      youth in Sunyani, Bono Region, across five key industries — through a holistic,
+      apprenticeship-based model built on hands-on skills, mentorship, and long-term support.
+      Below: our milestones to date, our training breakdown, and the live numbers we're tracking
+      as we digitize our program records.
     </p>
-    <p class="impact-asof" id="impact-asof"></p>
   </div>
 
+  <!-- ═══ MILESTONE BAND (cumulative, since 2021 — from our program records) ═ -->
+  <section class="milestone-band">
+    <div class="milestone-inner">
+      <div>
+        <div class="milestone-number">142</div>
+        <div class="milestone-label">Youth Trained Since 2021</div>
+      </div>
+      <div>
+        <div class="milestone-number">5</div>
+        <div class="milestone-label">Key Industries</div>
+      </div>
+      <div>
+        <div class="milestone-number">3 yrs</div>
+        <div class="milestone-label">Holistic Apprenticeship Track</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ TRAINING PROGRAMS BREAKDOWN (from our program records) ═ -->
+  <section class="section-shell">
+    <h2>Training Programs</h2>
+    <p class="section-intro">
+      Our proof is the thriving ecosystem we've built where youth are actively using their
+      skills to earn income, support their families, and uplift their communities — alongside
+      strong, trust-based relationships between mentors and apprentices that reinforce long-term
+      growth.
+    </p>
+    <div class="program-bars">
+      <div class="program-bar-row">
+        <div class="program-bar-name">Digital Skills</div>
+        <div class="program-bar-track"><div class="program-bar-fill" style="width:100%"></div></div>
+        <div class="program-bar-count">120</div>
+      </div>
+      <div class="program-bar-row">
+        <div class="program-bar-name">Sewing</div>
+        <div class="program-bar-track"><div class="program-bar-fill" style="width:8.3%"></div></div>
+        <div class="program-bar-count">10</div>
+      </div>
+      <div class="program-bar-row">
+        <div class="program-bar-name">Hair Dressing</div>
+        <div class="program-bar-track"><div class="program-bar-fill" style="width:5%"></div></div>
+        <div class="program-bar-count">6</div>
+      </div>
+      <div class="program-bar-row">
+        <div class="program-bar-name">Masonry</div>
+        <div class="program-bar-track"><div class="program-bar-fill" style="width:3.3%"></div></div>
+        <div class="program-bar-count">4</div>
+      </div>
+      <div class="program-bar-row">
+        <div class="program-bar-name">Entrepreneurship</div>
+        <div class="program-bar-track"><div class="program-bar-fill" style="width:1.7%"></div></div>
+        <div class="program-bar-count">2</div>
+      </div>
+    </div>
+    <p class="program-bars-note">142 youth trained to date across these five tracks. Bars are scaled relative to our largest cohort (Digital Skills).</p>
+  </section>
+
+  <!-- ═══ DIGITAL SKILLS CURRICULUM ══════════════════════════ -->
+  <section class="section-shell on-navy">
+    <h2>What &ldquo;Digital Skills&rdquo; Means at ThriveWorks</h2>
+    <p class="section-intro">
+      Our largest track isn't just computer basics — it's a deliberately forward-looking
+      curriculum designed to keep our youth relevant in a fast-changing job market.
+    </p>
+    <div class="curriculum-grid">
+      <div class="curriculum-card">
+        <h3>Core IT Literacy</h3>
+        <p>Microsoft Office Suite — Word, Excel, and PowerPoint — the everyday tools of office and administrative work across Ghana.</p>
+      </div>
+      <div class="curriculum-card">
+        <h3>Design</h3>
+        <p>Graphic design fundamentals using Canva and Adobe Photoshop, building a portfolio youth can use to freelance or join a design team.</p>
+      </div>
+      <div class="curriculum-card">
+        <h3>AI-Assisted Creation</h3>
+        <p>Hands-on discovery of AI tools for sound and video editing and generation — turning ideas into finished content faster.</p>
+      </div>
+      <div class="curriculum-card">
+        <h3>&ldquo;Vibe Coding&rdquo;</h3>
+        <p>An introduction to AI-assisted software development using tools like VS Code and Cursor — letting beginners build real, working software with AI as a coding partner.</p>
+      </div>
+      <div class="curriculum-card">
+        <h3>Practical Foundations</h3>
+        <p>Typing, internet research, email and online communication, and digital safety — the basics every other module builds on.</p>
+      </div>
+      <div class="curriculum-card">
+        <h3>Forward-Looking</h3>
+        <p>We continually refresh this curriculum so it reflects the tools the job market actually wants next, not just what was current when a youth enrolled.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOLISTIC, LONG-TERM SUPPORT ════════════════════════ -->
+  <section class="section-shell">
+    <h2>Holistic, Long-Term Support</h2>
+    <p class="section-intro">
+      Real skill mastery — especially through apprenticeship — takes time. Our apprenticeship
+      tracks run up to <strong>3 years</strong>, paired with continued mentorship so character
+      and discipline grow alongside technical ability.
+    </p>
+    <div class="support-grid">
+      <div class="support-card">
+        <div class="support-icon">🛠️</div>
+        <h3>Tools &amp; Resources</h3>
+        <p>We equip trainees and apprentices with the physical tools and materials their trade requires, not just instruction.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">🤝</div>
+        <h3>Continued Mentorship</h3>
+        <p>Mentors stay engaged well past graduation, reinforcing the trust-based relationships that sustain long-term growth.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">📊</div>
+        <h3>Monitoring &amp; Evaluation</h3>
+        <p>We track outcomes at 3, 6, and 12 months after graduation — employment status, income, and business survival — so we know what's actually working.</p>
+      </div>
+      <div class="support-card">
+        <div class="support-icon">🚀</div>
+        <h3>Entrepreneurship Support</h3>
+        <p>For apprentices ready to start their own business, we provide training, funds, and resources to support viable, nascent ventures.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OUR JOURNEY (condensed — full story on /journey) ══ -->
+  <section class="section-shell">
+    <h2>Our Journey</h2>
+    <div class="journey-strip">
+      <div class="journey-step">
+        <div class="journey-year">2021–2022</div>
+        <p>Ideation and community needs assessment. Established partnerships for program development and fundraising — notably Urban Promise International as fiscal sponsor.</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-year">2023</div>
+        <p>Incorporated ThriveWorks as an NGO in Ghana. Piloted and refined the program.</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-year">2024–2025</div>
+        <p>Program review and expansion to new sectors, doubling the number of youth served.</p>
+      </div>
+      <div class="journey-step">
+        <div class="journey-year">2026</div>
+        <p>Focused on securing funding for our training facility, expanding partnerships, strengthening staff, and increasing youth served through improved systems.</p>
+      </div>
+    </div>
+    <a href="/journey" class="journey-link">Read our full founding story →</a>
+  </section>
 
   <!-- ═══ BY THE NUMBERS ════════════════════════════════════ -->
   <section class="numbers-section">
     <div class="numbers-inner">
-      <h2>By the Numbers</h2>
-      <p class="numbers-subhead">Live data, fetched directly from our program management system</p>
+      <h2>Tracked Live In Our New Program System</h2>
+      <p class="numbers-subhead">We're digitizing our records — here's what's already flowing live from our program management system, growing as more data is entered</p>
+      <p class="impact-asof" id="impact-asof" style="text-align:center;color:rgba(245,237,224,0.6);"></p>
 
       <!-- Loading state -->
       <div class="impact-status" id="impact-loading">
@@ -741,6 +1071,76 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       </div>
 
+    </div>
+  </section>
+
+
+  <!-- ═══ LATEST FROM OUR NEWSLETTER ═════════════════════════ -->
+  <section class="section-shell">
+    <h2>Latest From Our Newsletter</h2>
+    <p class="section-intro" id="newsletter-intro">Loading our latest update&hellip;</p>
+
+    <div class="newsletter-card" id="newsletter-card" hidden>
+      <div class="newsletter-meta" id="newsletter-date"></div>
+      <div class="newsletter-title" id="newsletter-title"></div>
+      <p class="newsletter-excerpt" id="newsletter-excerpt"></p>
+      <div class="newsletter-actions">
+        <button type="button" class="text-link-btn" id="newsletter-toggle">Read full newsletter →</button>
+        <a href="http://eepurl.com/ic_IUf" target="_blank" rel="noopener"><button class="subscribe-btn">Subscribe to Newsletter</button></a>
+      </div>
+      <div class="newsletter-iframe-wrap" id="newsletter-iframe-wrap">
+        <iframe id="newsletter-iframe" title="Latest ThriveWorks Ghana newsletter" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="newsletter-card" id="newsletter-empty" hidden>
+      <div class="newsletter-title">Our first newsletter is on its way</div>
+      <p class="newsletter-excerpt">We're putting together our first community update — subscribe below to be the first to read it when it lands.</p>
+      <div class="newsletter-actions">
+        <a href="http://eepurl.com/ic_IUf" target="_blank" rel="noopener"><button class="subscribe-btn">Subscribe to Newsletter</button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOLLOW OUR JOURNEY (social) ════════════════════════ -->
+  <section class="section-shell">
+    <h2>Follow Our Journey</h2>
+    <p class="section-intro">We post day-to-day moments from our programs more often on social media than we update this site — follow along for the latest.</p>
+    <div class="social-section-grid">
+      <div class="fb-embed-wrap">
+        <div id="fb-root"></div>
+        <div class="fb-page"
+          data-href="https://www.facebook.com/thriveworksgh"
+          data-tabs="timeline"
+          data-width="500"
+          data-height="280"
+          data-small-header="true"
+          data-adapt-container-width="true"
+          data-hide-cover="false"
+          data-show-facepile="false">
+          <blockquote cite="https://www.facebook.com/thriveworksgh" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/thriveworksgh" target="_blank" rel="noopener">ThriveWorks Ghana on Facebook</a>
+          </blockquote>
+        </div>
+      </div>
+      <div class="follow-cards">
+        <a class="follow-card" href="https://www.instagram.com/thriveworksghana/profilecard/?igsh=MTM2OXYyNHptdDE1MA==" target="_blank" rel="noopener">
+          <span class="follow-icon">◎</span>
+          <span><span class="follow-name">Instagram</span><br><span class="follow-handle">@thriveworksghana</span></span>
+        </a>
+        <a class="follow-card" href="https://x.com/thriveworksgh?s=21&amp;t=RCzyF7LQWErMTZ4UFGTHkg" target="_blank" rel="noopener">
+          <span class="follow-icon">𝕏</span>
+          <span><span class="follow-name">X / Twitter</span><br><span class="follow-handle">@thriveworksgh</span></span>
+        </a>
+        <a class="follow-card" href="https://www.linkedin.com/company/thriveworksghana/" target="_blank" rel="noopener">
+          <span class="follow-icon">in</span>
+          <span><span class="follow-name">LinkedIn</span><br><span class="follow-handle">ThriveWorks Ghana</span></span>
+        </a>
+        <a class="follow-card" href="https://youtube.com/@thriveworksghana?si=6fGmpRn3yh3gW1iC" target="_blank" rel="noopener">
+          <span class="follow-icon" style="color:#FF0000;">▶</span>
+          <span><span class="follow-name">YouTube</span><br><span class="follow-handle">@thriveworksghana</span></span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -984,6 +1384,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       })
       .catch(function () {
         showError();
+      });
+  })();
+  </script>
+
+  <!-- ═══ NEWSLETTER — live fetch ════════════════════════════ -->
+  <script>
+  (function () {
+    var NEWSLETTER_API_URL = 'https://app.thriveworksghana.org/api/public/latest-newsletter';
+
+    function fmtDate(iso) {
+      try {
+        return new Date(iso).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      } catch (e) {
+        return '';
+      }
+    }
+
+    fetch(NEWSLETTER_API_URL, { headers: { 'Accept': 'application/json' } })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Bad response: ' + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        var intro = document.getElementById('newsletter-intro');
+        var n = data && data.newsletter;
+
+        if (!n) {
+          if (intro) intro.hidden = true;
+          var empty = document.getElementById('newsletter-empty');
+          if (empty) empty.hidden = false;
+          return;
+        }
+
+        if (intro) intro.hidden = true;
+
+        var card = document.getElementById('newsletter-card');
+        var dateEl = document.getElementById('newsletter-date');
+        var titleEl = document.getElementById('newsletter-title');
+        var excerptEl = document.getElementById('newsletter-excerpt');
+        if (dateEl) dateEl.textContent = n.sent_at ? fmtDate(n.sent_at) : 'Newsletter';
+        if (titleEl) titleEl.textContent = n.title || n.subject || 'Our latest update';
+        if (excerptEl) excerptEl.textContent = n.excerpt || '';
+        if (card) card.hidden = false;
+
+        var toggle = document.getElementById('newsletter-toggle');
+        var wrap = document.getElementById('newsletter-iframe-wrap');
+        var iframe = document.getElementById('newsletter-iframe');
+        if (toggle && wrap && iframe) {
+          toggle.addEventListener('click', function () {
+            var isOpen = wrap.classList.contains('is-open');
+            if (!isOpen && !iframe.getAttribute('srcdoc')) {
+              iframe.setAttribute('srcdoc', n.html_content || '<p style="font-family:sans-serif;padding:20px;">No content available.</p>');
+            }
+            wrap.classList.toggle('is-open');
+            toggle.textContent = isOpen ? 'Read full newsletter →' : 'Hide full newsletter ↑';
+          });
+        }
+      })
+      .catch(function () {
+        var intro = document.getElementById('newsletter-intro');
+        var empty = document.getElementById('newsletter-empty');
+        if (intro) intro.hidden = true;
+        if (empty) empty.hidden = false;
       });
   })();
   </script>
