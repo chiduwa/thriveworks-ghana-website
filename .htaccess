@@ -95,6 +95,14 @@ RewriteRule ^(.+?)/?$ $1.html [L]
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  # frame-ancestors/object-src/base-uri only restrict embedding-by-others,
+  # legacy plugin embeds, and base-tag injection — they don't touch what
+  # this site itself loads, so they're safe to add without auditing every
+  # GTM tag and third-party widget (Facebook, Google Forms, fonts) for a
+  # full script-src/style-src policy, which would need live browser testing
+  # this environment can't do against the production site.
+  Header always set Content-Security-Policy "upgrade-insecure-requests; frame-ancestors 'self'; object-src 'none'; base-uri 'self'"
 
   # CORS for fonts
   <FilesMatch "\.(woff|woff2|ttf|otf|eot)$">
