@@ -107,7 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           "name": "How many youth has ThriveWorks Ghana served?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ThriveWorks Ghana has trained 142 youth since 2021 across five key industries: Building & Construction, Textiles & Apparel, Personal Care, Technology, and Entrepreneurship. We also track live aggregate numbers of youth served, program graduates, and regions reached on our Our Impact page as our program records are digitized."
+            "text": "ThriveWorks Ghana has trained 142 youth since 2021 across five key industries: Building & Construction, Textiles & Apparel, Personal Care, Technology, and Entrepreneurship, with 90 graduates so far. Our Our Impact page shows this full track record alongside live numbers from our program management system."
           }
         },
         {
@@ -373,6 +373,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 30px 32px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.06);
     }
+    .newsletter-card-img {
+      width: calc(100% + 64px);
+      margin: -30px -32px 20px;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px 12px 0 0;
+    }
     .newsletter-meta { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
     .newsletter-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 12px; }
     .newsletter-excerpt { font-size: 0.9rem; color: #444; line-height: 1.7; margin-bottom: 18px; }
@@ -388,6 +396,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-family: inherit; display: block; width: 100%;
     }
     .newsletter-mini-card:hover, .newsletter-mini-card:focus-visible { border-color: var(--gold); transform: translateY(-2px); outline: none; }
+    .newsletter-mini-card .nm-img {
+      width: calc(100% + 40px);
+      margin: -18px -20px 12px;
+      height: 130px;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px 10px 0 0;
+    }
     .newsletter-mini-card .nm-date { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
     .newsletter-mini-card .nm-title { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.4; }
     .newsletter-mini-card .nm-excerpt { font-size: 0.8rem; color: #666; line-height: 1.5; }
@@ -434,42 +450,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: rgba(245,237,224,0.75);
       font-size: 0.9rem;
       margin-bottom: 48px;
-    }
-
-    /* Loading / error state */
-    .impact-status {
-      text-align: center;
-      color: var(--cream);
-      font-size: 0.95rem;
-      padding: 30px 20px;
-    }
-    .impact-status.is-error { color: #f0c8c8; }
-    .impact-status[hidden] { display: none; }
-
-    .skeleton-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      margin-bottom: 10px;
-    }
-    .skeleton-card {
-      background: rgba(255,255,255,0.06);
-      border-radius: 8px;
-      padding: 32px 18px;
-      height: 110px;
-      position: relative;
-      overflow: hidden;
-    }
-    .skeleton-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-      animation: skeletonShimmer 1.4s infinite;
-    }
-    @keyframes skeletonShimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
     }
 
     .stats-grid {
@@ -699,7 +679,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* ── RESPONSIVE ─────────────────────────────────── */
     @media (max-width: 900px) {
-      .stats-grid, .skeleton-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .secondary-grid { grid-template-columns: 1fr; }
       .milestone-inner { grid-template-columns: 1fr; gap: 24px; }
       .curriculum-grid { grid-template-columns: 1fr; }
@@ -735,7 +715,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .impact-hero h1 { font-size: 1.9rem; }
       .numbers-section h2 { font-size: 1.7rem; }
       .impact-cta-inner h2 { font-size: 1.8rem; }
-      .stats-grid, .skeleton-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
       .hdr-btn { padding: 9px 16px; font-size: 0.75rem; }
       .stat-number { font-size: 2.1rem; }
       .support-grid { grid-template-columns: 1fr; }
@@ -1036,69 +1016,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/journey" class="journey-link">Read our full founding story →</a>
   </section>
 
-  <!-- ═══ BY THE NUMBERS ════════════════════════════════════ -->
+  <!-- ═══ CURRENT PROGRAMS & DATA ════════════════════════════ -->
   <section class="numbers-section">
     <div class="numbers-inner">
-      <h2>What We're Tracking Right Now</h2>
-      <p class="numbers-subhead">We're still in the middle of moving our records into this new system, so these numbers are smaller than our real history. They'll grow as we finish digitizing.</p>
+      <h2>Current Programs &amp; Data</h2>
+      <p class="numbers-subhead">Our full track record, plus what's flowing in live from our new program management system.</p>
       <p class="impact-asof" id="impact-asof" style="text-align:center;color:rgba(245,237,224,0.6);"></p>
 
-      <!-- Loading state -->
-      <div class="impact-status" id="impact-loading">
-        <div class="skeleton-grid">
-          <div class="skeleton-card"></div>
-          <div class="skeleton-card"></div>
-          <div class="skeleton-card"></div>
-          <div class="skeleton-card"></div>
-        </div>
-        <p>Loading our latest numbers&hellip;</p>
-      </div>
-
-      <!-- Error state -->
-      <div class="impact-status is-error" id="impact-error" hidden>
-        <p>We're unable to load live impact numbers right now. Please check back shortly, or contact us at info@thriveworksghana.org for our latest program data.</p>
-      </div>
-
-      <!-- Loaded content -->
-      <div id="impact-content" hidden>
+      <div id="impact-content">
 
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-number" id="stat-beneficiaries">...</div>
+            <div class="stat-number" id="stat-beneficiaries">142</div>
             <div class="stat-label">Youth Served</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" id="stat-programs">...</div>
+            <div class="stat-number" id="stat-programs">5</div>
             <div class="stat-label">Programs Run</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" id="stat-graduates">...</div>
+            <div class="stat-number" id="stat-graduates">90</div>
             <div class="stat-label">Graduates</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" id="stat-regions">...</div>
+            <div class="stat-number" id="stat-regions">1</div>
             <div class="stat-label">Regions Reached</div>
           </div>
         </div>
 
         <div class="secondary-grid">
-          <div class="secondary-card" id="gender-card" hidden>
+          <div class="secondary-card" id="gender-card">
             <h3>Gender Breakdown</h3>
             <div id="gender-bars"></div>
           </div>
 
           <div class="secondary-card">
             <h3>Total Invested</h3>
-            <div class="invested-amount" id="stat-invested">...</div>
-            <p class="invested-note">Approximate cumulative amount invested in ThriveWorks Ghana programs to date (GHS).</p>
+            <div class="invested-amount">GHS 200,000</div>
+            <p class="invested-note">Approximate cumulative amount invested in ThriveWorks Ghana programs to date.</p>
           </div>
         </div>
 
-        <div class="secondary-grid" id="employment-row" hidden style="margin-top:22px;">
+        <div class="secondary-grid" style="margin-top:22px;">
           <div class="secondary-card" style="grid-column: 1 / -1;">
             <h3>Employment Outcomes</h3>
-            <div class="invested-amount" id="stat-employment">...</div>
-            <p class="employment-note" id="employment-note" style="text-align:left;margin-top:0;"></p>
+            <div class="invested-amount">31%</div>
+            <p class="employment-note" style="text-align:left;margin-top:0;">Employed or self-employed among our graduates surveyed so far.</p>
           </div>
         </div>
 
@@ -1115,6 +1078,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div id="newsletter-featured" hidden>
       <div class="newsletter-card">
+        <img class="newsletter-card-img" data-role="image" alt="" loading="lazy" hidden>
         <div class="newsletter-meta" data-role="date"></div>
         <div class="newsletter-title" data-role="title"></div>
         <p class="newsletter-excerpt" data-role="excerpt"></p>
@@ -1304,13 +1268,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function twCountUp(el, target, opts) {
       opts = opts || {};
       var duration = opts.duration || 1200;
+      var from = opts.from || 0;
       var formatter = opts.format || function (v) { return String(Math.round(v)); };
       var start = null;
       function step(timestamp) {
         if (!start) start = timestamp;
         var progress = Math.min((timestamp - start) / duration, 1);
         var eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = formatter(target * eased);
+        el.textContent = formatter(from + (target - from) * eased);
         if (progress < 1) requestAnimationFrame(step);
         else el.textContent = formatter(target);
       }
@@ -1382,7 +1347,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     // Gentle fade/slide-in for each major section as it scrolls into view.
-    var revealTargets = document.querySelectorAll('.section-shell, .milestone-band');
+    var revealTargets = document.querySelectorAll('.section-shell, .milestone-band, .numbers-section');
     if (revealTargets.length && !prefersReducedMotion) {
       revealTargets.forEach(function (el) {
         el.style.opacity = '0';
@@ -1402,19 +1367,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   })();
   </script>
 
-  <!-- ═══ IMPACT STATS: live fetch ════════════════════════ -->
+  <!-- ═══ IMPACT STATS: baselines from our track record, plus ═
+       whatever's live in our new program system added on top ═ -->
   <script>
   (function () {
     var API_URL = 'https://app.thriveworksghana.org/api/public/impact-stats';
 
+    // Our real cumulative history (from our program records), shown
+    // immediately. Live counts from the new program system, once it
+    // resolves, are added on top rather than replacing these, since the
+    // new system only has a handful of digitized records so far and
+    // showing just that number alone would understate our actual reach.
+    var BASELINES = {
+      'stat-beneficiaries': 142,
+      'stat-programs': 5,
+      'stat-graduates': 90,
+      'stat-regions': 1
+    };
+
     function fmtNumber(n) {
       if (typeof n !== 'number' || isNaN(n)) return '...';
       return n.toLocaleString('en-US');
-    }
-
-    function fmtGHS(n) {
-      if (typeof n !== 'number' || isNaN(n)) return '...';
-      return 'GHS ' + Math.round(n).toLocaleString('en-US');
     }
 
     function setText(id, text) {
@@ -1422,50 +1395,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (el) el.textContent = text;
     }
 
-    function renderGenderBars(breakdown) {
+    function renderStaticGenderBars() {
       var container = document.getElementById('gender-bars');
-      var card = document.getElementById('gender-card');
-      if (!container || !card) return;
+      if (!container) return;
 
-      if (!breakdown || typeof breakdown !== 'object') {
-        card.hidden = true;
-        return;
-      }
-
-      var entries = Object.entries(breakdown).filter(function (pair) {
-        return typeof pair[1] === 'number' && !isNaN(pair[1]);
-      });
-
-      if (entries.length === 0) {
-        card.hidden = true;
-        return;
-      }
-
-      var labelMap = {
-        female: 'Female',
-        male: 'Male',
-        other: 'Other',
-        prefer_not_to_say: 'Prefer not to say'
-      };
+      var entries = [['female', 65], ['male', 35]];
+      var labelMap = { female: 'Female', male: 'Male' };
 
       container.innerHTML = '';
       entries.forEach(function (pair) {
         var key = pair[0];
         var pct = pair[1];
-        var label = labelMap[key] || (key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, ' '));
 
         var row = document.createElement('div');
         row.className = 'gender-row';
 
         var name = document.createElement('span');
         name.className = 'gender-name';
-        name.textContent = label;
+        name.textContent = labelMap[key];
 
         var track = document.createElement('span');
         track.className = 'gender-bar-track';
         var fill = document.createElement('span');
         fill.className = 'gender-bar-fill';
-        fill.style.width = Math.max(0, Math.min(100, pct)) + '%';
+        fill.style.width = pct + '%';
         track.appendChild(fill);
 
         var pctEl = document.createElement('span');
@@ -1477,63 +1430,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         row.appendChild(pctEl);
         container.appendChild(row);
       });
-
-      card.hidden = false;
     }
+    renderStaticGenderBars();
 
-    function renderEmployment(pct, sampleSize) {
-      var row = document.getElementById('employment-row');
-      if (!row) return;
-
-      if (pct === null || pct === undefined || typeof pct !== 'number' || isNaN(pct) || !sampleSize) {
-        row.hidden = true;
-        return;
-      }
-
-      setText('stat-employment', pct + '%');
-      setText('employment-note', 'Employed or self-employed among ' + fmtNumber(sampleSize) + ' graduates surveyed after completing a program.');
-      row.hidden = false;
-    }
-
-    function animateStat(id, value) {
+    function addLiveOnTop(id, liveValue) {
       var el = document.getElementById(id);
+      var baseline = BASELINES[id] || 0;
       if (!el) return;
-      if (typeof value !== 'number' || isNaN(value)) {
-        el.textContent = '...';
-        return;
-      }
+      var live = (typeof liveValue === 'number' && !isNaN(liveValue)) ? liveValue : 0;
+      var target = baseline + live;
+      if (target === baseline) return;
       if (window.twCountUp) {
-        window.twCountUp(el, value, { duration: 1000, format: fmtNumber });
+        window.twCountUp(el, target, { duration: 1000, from: baseline, format: fmtNumber });
       } else {
-        el.textContent = fmtNumber(value);
+        el.textContent = fmtNumber(target);
       }
     }
 
     function renderStats(data) {
-      animateStat('stat-beneficiaries', data.beneficiaries_served_total);
-      animateStat('stat-programs', data.programs_count);
-      animateStat('stat-graduates', data.graduates_count);
-      animateStat('stat-regions', data.regions_covered);
-      setText('stat-invested', fmtGHS(data.total_invested_ghs));
+      addLiveOnTop('stat-beneficiaries', data.beneficiaries_served_total);
+      addLiveOnTop('stat-programs', data.programs_count);
+      addLiveOnTop('stat-graduates', data.graduates_count);
+      addLiveOnTop('stat-regions', data.regions_covered);
 
       if (data.as_of) {
-        setText('impact-asof', 'Figures as of ' + data.as_of + '.');
+        setText('impact-asof', 'Live figures last updated ' + data.as_of + '.');
       }
-
-      renderGenderBars(data.gender_breakdown_pct);
-      renderEmployment(data.employment_outcome_pct, data.employment_outcome_sample_size);
-
-      document.getElementById('impact-loading').hidden = true;
-      document.getElementById('impact-error').hidden = true;
-      document.getElementById('impact-content').hidden = false;
     }
 
-    function showError() {
-      document.getElementById('impact-loading').hidden = true;
-      document.getElementById('impact-content').hidden = true;
-      document.getElementById('impact-error').hidden = false;
-    }
-
+    // Total invested, gender breakdown, and employment outcomes are
+    // shown as static figures (see markup) and intentionally don't
+    // pull from this API at all.
     fetch(API_URL, { headers: { 'Accept': 'application/json' } })
       .then(function (res) {
         if (!res.ok) throw new Error('Bad response: ' + res.status);
@@ -1544,7 +1471,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         renderStats(data);
       })
       .catch(function () {
-        showError();
+        // Baseline figures already shown in the markup stand on their own.
       });
   })();
   </script>
@@ -1598,11 +1525,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var featuredWrap = document.getElementById('newsletter-featured');
       if (!featuredWrap) return;
 
+      var imgEl = featuredWrap.querySelector('[data-role="image"]');
       var dateEl = featuredWrap.querySelector('[data-role="date"]');
       var titleEl = featuredWrap.querySelector('[data-role="title"]');
       var excerptEl = featuredWrap.querySelector('[data-role="excerpt"]');
       var toggle = featuredWrap.querySelector('[data-role="toggle"]');
 
+      if (imgEl) {
+        if (n.image_url) {
+          imgEl.src = n.image_url;
+          imgEl.alt = n.title || 'Newsletter photo';
+          imgEl.hidden = false;
+        } else {
+          imgEl.hidden = true;
+        }
+      }
       if (dateEl) dateEl.textContent = n.sent_at ? fmtDate(n.sent_at) : 'Newsletter';
       if (titleEl) titleEl.textContent = n.title || 'Our latest update';
       if (excerptEl) excerptEl.textContent = n.excerpt || 'Read the full update below.';
@@ -1624,6 +1561,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var card = document.createElement('button');
         card.type = 'button';
         card.className = 'newsletter-mini-card';
+
+        if (n.image_url) {
+          var imgEl = document.createElement('img');
+          imgEl.className = 'nm-img';
+          imgEl.src = n.image_url;
+          imgEl.alt = '';
+          imgEl.loading = 'lazy';
+          card.appendChild(imgEl);
+        }
 
         var dateEl = document.createElement('div');
         dateEl.className = 'nm-date';
