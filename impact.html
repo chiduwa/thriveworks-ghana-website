@@ -377,9 +377,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .newsletter-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 12px; }
     .newsletter-excerpt { font-size: 0.9rem; color: #444; line-height: 1.7; margin-bottom: 18px; }
     .newsletter-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
-    .newsletter-iframe-wrap { display: none; margin-top: 20px; border: 1px solid rgba(27,33,84,0.12); border-radius: 8px; overflow: hidden; }
+    .newsletter-iframe-wrap { display: none; margin: 20px 0 36px; border: 1px solid rgba(27,33,84,0.12); border-radius: 8px; overflow: hidden; }
     .newsletter-iframe-wrap.is-open { display: block; }
     .newsletter-iframe-wrap iframe { width: 100%; height: 600px; border: none; display: block; }
+    .newsletter-past-heading { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+    .newsletter-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .newsletter-mini-card {
+      background: var(--white); border: 1px solid rgba(27,33,84,0.1); border-radius: 10px;
+      padding: 18px 20px; cursor: pointer; transition: border-color 0.2s, transform 0.2s; text-align: left;
+      font-family: inherit; display: block; width: 100%;
+    }
+    .newsletter-mini-card:hover, .newsletter-mini-card:focus-visible { border-color: var(--gold); transform: translateY(-2px); outline: none; }
+    .newsletter-mini-card .nm-date { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .newsletter-mini-card .nm-title { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.4; }
+    .newsletter-mini-card .nm-excerpt { font-size: 0.8rem; color: #666; line-height: 1.5; }
     .text-link-btn { background: none; border: none; padding: 0; font-weight: 700; font-size: 0.85rem; color: var(--navy); border-bottom: 2px solid var(--gold); cursor: pointer; font-family: inherit; }
 
     /* ── SOCIAL / FOLLOW SECTION ──────────────────────── */
@@ -696,6 +707,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .journey-strip { grid-template-columns: repeat(2, 1fr); }
       .social-section-grid { grid-template-columns: 1fr; }
       .follow-cards { grid-template-columns: 1fr; }
+      .newsletter-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -713,6 +725,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .section-shell { padding: 50px 20px; }
       .program-bar-row { grid-template-columns: 1fr; gap: 6px; }
       .program-bar-count { text-align: left; }
+      .newsletter-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 480px) {
@@ -1095,23 +1108,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
 
-  <!-- ═══ LATEST FROM OUR NEWSLETTER ═════════════════════════ -->
+  <!-- ═══ FROM OUR NEWSLETTER (featured + past, deduped) ═════ -->
   <section class="section-shell">
     <h2>From Our Newsletter</h2>
-    <p class="section-intro" id="newsletter-intro">Loading our latest update&hellip;</p>
+    <p class="section-intro" id="newsletter-intro">Loading our latest updates&hellip;</p>
 
-    <div class="newsletter-card" id="newsletter-card" hidden>
-      <div class="newsletter-meta" id="newsletter-date"></div>
-      <div class="newsletter-title" id="newsletter-title"></div>
-      <p class="newsletter-excerpt" id="newsletter-excerpt"></p>
-      <div class="newsletter-actions">
-        <button type="button" class="text-link-btn" id="newsletter-toggle">Read it in full</button>
-        <a href="http://eepurl.com/ic_IUf" target="_blank" rel="noopener"><button class="subscribe-btn">Subscribe to Newsletter</button></a>
+    <div id="newsletter-featured" hidden>
+      <div class="newsletter-card">
+        <div class="newsletter-meta" data-role="date"></div>
+        <div class="newsletter-title" data-role="title"></div>
+        <p class="newsletter-excerpt" data-role="excerpt"></p>
+        <div class="newsletter-actions">
+          <button type="button" class="text-link-btn" data-role="toggle">Read it in full</button>
+          <a href="http://eepurl.com/ic_IUf" target="_blank" rel="noopener"><button class="subscribe-btn">Subscribe to Newsletter</button></a>
+        </div>
       </div>
-      <div class="newsletter-iframe-wrap" id="newsletter-iframe-wrap">
-        <a href="#" id="newsletter-open-new-tab" target="_blank" rel="noopener" class="text-link-btn" style="display:block;margin-bottom:10px;">Open in a new tab</a>
-        <iframe id="newsletter-iframe" title="Latest ThriveWorks Ghana newsletter" loading="lazy"></iframe>
-      </div>
+    </div>
+
+    <div class="newsletter-iframe-wrap" id="newsletter-iframe-wrap">
+      <a href="#" id="newsletter-open-new-tab" target="_blank" rel="noopener" class="text-link-btn" style="display:block;margin-bottom:10px;">Open in a new tab</a>
+      <iframe id="newsletter-iframe" title="ThriveWorks Ghana newsletter" loading="lazy"></iframe>
+    </div>
+
+    <div id="newsletter-past-wrap" hidden>
+      <h3 class="newsletter-past-heading">Past Newsletters</h3>
+      <div class="newsletter-grid" id="newsletter-grid"></div>
     </div>
 
     <div class="newsletter-card" id="newsletter-empty" hidden>
@@ -1528,10 +1549,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   })();
   </script>
 
-  <!-- ═══ NEWSLETTER: live fetch ════════════════════════════ -->
+  <!-- ═══ NEWSLETTERS: live fetch, featured + past grid ══════ -->
   <script>
   (function () {
-    var NEWSLETTER_API_URL = 'https://app.thriveworksghana.org/api/public/latest-newsletter';
+    var NEWSLETTER_API_URL = 'https://app.thriveworksghana.org/api/public/newsletters?limit=6';
 
     function fmtDate(iso) {
       try {
@@ -1541,62 +1562,113 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     }
 
+    function canRead(n) {
+      return !!(n.archive_url || n.html_content);
+    }
+
+    function showEmpty() {
+      var intro = document.getElementById('newsletter-intro');
+      var empty = document.getElementById('newsletter-empty');
+      if (intro) intro.hidden = true;
+      if (empty) empty.hidden = false;
+    }
+
+    // One shared reader panel. Any card (featured or past) loads its
+    // content here rather than each card carrying its own iframe.
+    function loadIntoReader(n) {
+      var wrap = document.getElementById('newsletter-iframe-wrap');
+      var iframe = document.getElementById('newsletter-iframe');
+      var openNewTab = document.getElementById('newsletter-open-new-tab');
+      if (!wrap || !iframe || !canRead(n)) return;
+
+      if (n.archive_url) {
+        iframe.removeAttribute('srcdoc');
+        iframe.setAttribute('src', n.archive_url);
+        if (openNewTab) { openNewTab.href = n.archive_url; openNewTab.style.display = 'block'; }
+      } else {
+        iframe.removeAttribute('src');
+        iframe.setAttribute('srcdoc', n.html_content);
+        if (openNewTab) openNewTab.style.display = 'none';
+      }
+      wrap.classList.add('is-open');
+      wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function renderFeatured(n) {
+      var featuredWrap = document.getElementById('newsletter-featured');
+      if (!featuredWrap) return;
+
+      var dateEl = featuredWrap.querySelector('[data-role="date"]');
+      var titleEl = featuredWrap.querySelector('[data-role="title"]');
+      var excerptEl = featuredWrap.querySelector('[data-role="excerpt"]');
+      var toggle = featuredWrap.querySelector('[data-role="toggle"]');
+
+      if (dateEl) dateEl.textContent = n.sent_at ? fmtDate(n.sent_at) : 'Newsletter';
+      if (titleEl) titleEl.textContent = n.title || 'Our latest update';
+      if (excerptEl) excerptEl.textContent = n.excerpt || 'Read the full update below.';
+
+      if (toggle) {
+        if (canRead(n)) toggle.addEventListener('click', function () { loadIntoReader(n); });
+        else toggle.style.display = 'none';
+      }
+      featuredWrap.hidden = false;
+    }
+
+    function renderPast(items) {
+      if (!items.length) return;
+      var grid = document.getElementById('newsletter-grid');
+      var pastWrap = document.getElementById('newsletter-past-wrap');
+      if (!grid || !pastWrap) return;
+
+      items.forEach(function (n) {
+        var card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'newsletter-mini-card';
+
+        var dateEl = document.createElement('div');
+        dateEl.className = 'nm-date';
+        dateEl.textContent = n.sent_at ? fmtDate(n.sent_at) : 'Newsletter';
+
+        var titleEl = document.createElement('div');
+        titleEl.className = 'nm-title';
+        titleEl.textContent = n.title || 'Update';
+
+        var excerptEl = document.createElement('div');
+        excerptEl.className = 'nm-excerpt';
+        excerptEl.textContent = n.excerpt || '';
+
+        card.appendChild(dateEl);
+        card.appendChild(titleEl);
+        card.appendChild(excerptEl);
+
+        if (canRead(n)) card.addEventListener('click', function () { loadIntoReader(n); });
+        else { card.disabled = true; card.style.cursor = 'default'; card.style.opacity = '0.6'; }
+
+        grid.appendChild(card);
+      });
+
+      pastWrap.hidden = false;
+    }
+
     fetch(NEWSLETTER_API_URL, { headers: { 'Accept': 'application/json' } })
       .then(function (res) {
         if (!res.ok) throw new Error('Bad response: ' + res.status);
         return res.json();
       })
       .then(function (data) {
+        var list = (data && data.newsletters) || [];
         var intro = document.getElementById('newsletter-intro');
-        var n = data && data.newsletter;
 
-        if (!n) {
-          if (intro) intro.hidden = true;
-          var empty = document.getElementById('newsletter-empty');
-          if (empty) empty.hidden = false;
+        if (!list.length) {
+          showEmpty();
           return;
         }
 
         if (intro) intro.hidden = true;
-
-        if (!n.archive_url) {
-          if (intro) intro.hidden = true;
-          var empty2 = document.getElementById('newsletter-empty');
-          if (empty2) empty2.hidden = false;
-          return;
-        }
-
-        var card = document.getElementById('newsletter-card');
-        var dateEl = document.getElementById('newsletter-date');
-        var titleEl = document.getElementById('newsletter-title');
-        var excerptEl = document.getElementById('newsletter-excerpt');
-        if (dateEl) dateEl.textContent = n.sent_at ? fmtDate(n.sent_at) : 'Newsletter';
-        if (titleEl) titleEl.textContent = n.title || 'Our latest update';
-        if (excerptEl) excerptEl.textContent = n.excerpt || 'Read the full update below.';
-        if (card) card.hidden = false;
-
-        var toggle = document.getElementById('newsletter-toggle');
-        var wrap = document.getElementById('newsletter-iframe-wrap');
-        var iframe = document.getElementById('newsletter-iframe');
-        var openNewTab = document.getElementById('newsletter-open-new-tab');
-        if (openNewTab) openNewTab.href = n.archive_url;
-        if (toggle && wrap && iframe) {
-          toggle.addEventListener('click', function () {
-            var isOpen = wrap.classList.contains('is-open');
-            if (!isOpen && !iframe.getAttribute('src')) {
-              iframe.setAttribute('src', n.archive_url);
-            }
-            wrap.classList.toggle('is-open');
-            toggle.textContent = isOpen ? 'Read it in full' : 'Hide it';
-          });
-        }
+        renderFeatured(list[0]);
+        renderPast(list.slice(1));
       })
-      .catch(function () {
-        var intro = document.getElementById('newsletter-intro');
-        var empty = document.getElementById('newsletter-empty');
-        if (intro) intro.hidden = true;
-        if (empty) empty.hidden = false;
-      });
+      .catch(showEmpty);
   })();
   </script>
 
