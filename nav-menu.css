@@ -46,7 +46,7 @@
 .site-menu {
   position: fixed;
   top: 0;
-  right: -300px;
+  right: 0;
   width: 280px;
   height: 100%;
   background: #1B2154; /* --navy */
@@ -56,12 +56,13 @@
   flex-direction: column;
   padding: 90px 24px 28px;
   gap: 4px;
-  transition: right 0.3s ease;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
   overflow-y: auto;
 }
 
 .site-menu.is-open {
-  right: 0;
+  transform: translateX(0);
 }
 
 .site-menu-link {
@@ -89,6 +90,5 @@
 @media (max-width: 480px) {
   .site-menu {
     width: 100%;
-    right: -100%;
   }
 }
