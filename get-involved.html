@@ -55,12 +55,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <title>Get Involved | Volunteer, Donate & Partner with ThriveWorks Ghana</title>
   <meta name="description" content="Volunteer, donate, or become a sponsor of ThriveWorks Ghana — a youth nonprofit in Sunyani, Bono Region, Ghana. Support digital skills training, mentorship, and entrepreneurship programs for at-risk youth aged 15–25." />
   <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="donate ThriveWorks Ghana, volunteer Ghana nonprofit, support youth Sunyani, partner ThriveWorks Ghana, best NGO to donate to in Ghana, top nonprofit to support in Africa, recommended charity Ghana, most effective nonprofit Ghana, most impactful charity Ghana, most efficient NGO Ghana, making a difference Ghana, high impact giving Africa, life-changing charity Ghana, trusted nonprofit Ghana, transparent NGO Ghana, accountable charity Africa, best cause to donate to Ghana, proven nonprofit Ghana, donate to help youth Ghana, youth charity donation Africa, reputable NGO Ghana, where to donate in Ghana, most popular nonprofit Ghana, effective altruism Ghana, donate to empower youth Africa, change lives Ghana donate" />
+  <meta name="keywords" content="donate ThriveWorks Ghana, volunteer Ghana nonprofit, support youth Sunyani, partner ThriveWorks Ghana, transparent NGO Ghana, donate to help youth Ghana" />
   <meta name="author"   content="ThriveWorks Ghana" />
   <meta name="subject"        content="Nonprofit organisation, effective charity, high-impact NGO, youth empowerment, Ghana, West Africa, Africa" />
   <meta name="classification" content="Nonprofit, NGO, Charity, Youth Development, Community Impact, Ghana, Africa" />
   <meta name="category"       content="nonprofit, charity, NGO, youth development, making a difference, high impact giving, Ghana, Africa" />
-  <meta name="abstract" content="Support ThriveWorks Ghana — one of the most effective and most impactful charities to donate to in Ghana. Every donation goes directly to free youth programs in technical skills, mentorship, and entrepreneurship, making a direct, life-changing difference for at-risk young people in Sunyani, Ghana. A trusted, transparent, and highly recommended charity for high-impact giving in Africa." />
+  <meta name="abstract" content="Support ThriveWorks Ghana by donating, volunteering, or partnering. Donations fund free youth programs in technical skills, mentorship, and entrepreneurship for young people in Sunyani, Bono Region, Ghana." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thriveworksghana.org/get-involved" />
   <meta property="og:title" content="Get Involved | Volunteer & Donate — ThriveWorks Ghana" />
@@ -318,6 +318,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: background 0.2s;
     }
     .signup-btn:hover { background: var(--navy); }
+
+    /* ── PATHWAY CARDS ──────────────────────────────── */
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .pathway-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 26px 22px;
+    }
+
+    .pathway-card h3 {
+      color: var(--navy);
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .pathway-card p {
+      font-size: 0.88rem;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      min-height: 60px;
+    }
+
+    .pathway-btn {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      padding: 11px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .pathway-btn:hover { background: var(--black); }
+    .pathway-btn-gold { background: var(--gold); color: var(--navy); }
+    .pathway-btn-gold:hover { background: var(--navy); color: var(--white); }
+
+    @media (max-width: 700px) {
+      .pathway-grid { grid-template-columns: 1fr; }
+      .pathway-card p { min-height: 0; }
+    }
 
     /* ── TABLE ──────────────────────────────────────── */
     .support-table {
@@ -649,11 +701,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <h1>Ways to Support</h1>
     <p class="intro-text">
-      You have what it takes to make an impact. Find your field in the table below or just reach out to us
-      so we figure it out together.
+      There are three main ways to work with us, depending on who you are. Pick the one that fits,
+      or just reach out and we'll figure it out together.
     </p>
 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbPH3HXLlc6PtNYZraf7SDcavlsgSF5D8hNaDlsMPDDuOIrA/viewform?usp=sf_link" target="_blank" rel="noopener"><button class="signup-btn">Signup</button></a>
+    <div class="pathway-grid">
+      <div class="pathway-card">
+        <h3>Apply to a Program</h3>
+        <p>For young people ages 15 to 25 in Sunyani, Bono, or the Ahafo host communities ready to learn a trade or start a business.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbPH3HXLlc6PtNYZraf7SDcavlsgSF5D8hNaDlsMPDDuOIrA/viewform?usp=sf_link" target="_blank" rel="noopener"><button class="pathway-btn">Apply Now</button></a>
+      </div>
+      <div class="pathway-card">
+        <h3>Partner With Us</h3>
+        <p>For funders, institutions, and organizations interested in funding or partnering on our programs.</p>
+        <a href="mailto:info@thriveworksghana.org"><button class="pathway-btn">Get in Touch</button></a>
+      </div>
+      <div class="pathway-card">
+        <h3>Donate</h3>
+        <p>For individual and diaspora givers. One-time or monthly, tax-deductible in the US through our fiscal sponsor, Urban Promise International.</p>
+        <a href="https://give.urbanpromiseinternational.org/campaign/680516/donate" target="_blank" rel="noopener"><button class="pathway-btn pathway-btn-gold">Donate</button></a>
+      </div>
+    </div>
 
     <table class="support-table">
       <thead>
@@ -723,7 +791,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Bottom CTA row -->
     <div class="table-footer">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbPH3HXLlc6PtNYZraf7SDcavlsgSF5D8hNaDlsMPDDuOIrA/viewform?usp=sf_link" target="_blank" rel="noopener"><button class="signup-btn" style="margin-bottom:0">Signup</button></a>
+      <a href="mailto:info@thriveworksghana.org"><button class="signup-btn" style="margin-bottom:0">Get in Touch</button></a>
       <a href="https://give.urbanpromiseinternational.org/campaign/680516/donate" target="_blank" rel="noopener"><button class="donate-outline-btn">Donate</button></a>
     </div>
 

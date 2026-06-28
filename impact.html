@@ -53,9 +53,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Impact | ThriveWorks Ghana — Youth Empowerment Results</title>
-  <meta name="description" content="142 youth trained since 2021, 93% employed or in further education, and 80% of every cedi spent directly on programs. See why donors, sponsors, and grantmakers back ThriveWorks Ghana, one of the most efficient youth nonprofits in Ghana and West Africa." />
+  <meta name="description" content="142 youth trained since 2021, 93% employed or in further education, and 80% of every cedi spent directly on programs. See the full numbers behind ThriveWorks Ghana, a youth nonprofit in Sunyani, Bono Region, Ghana." />
   <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="ThriveWorks Ghana impact, nonprofit results Ghana, youth empowerment statistics Ghana, NGO impact data Sunyani, best nonprofit results Ghana, measurable impact NGO Ghana, top youth organisation impact West Africa, digital skills training Ghana, apprenticeship program Ghana, efficient nonprofit Ghana, NGO program spending ratio, nonprofit financial transparency Ghana, donate youth empowerment Ghana, sponsor youth apprenticeship Ghana, CSR partner Ghana, grant funding youth programs Ghana, high-impact charity Africa, vetted nonprofit West Africa, low overhead nonprofit Ghana" />
+  <meta name="keywords" content="ThriveWorks Ghana impact, nonprofit results Ghana, youth empowerment statistics Ghana, NGO impact data Sunyani, digital skills training Ghana, apprenticeship program Ghana, nonprofit financial transparency Ghana, sponsor youth apprenticeship Ghana, CSR partner Ghana, grant funding youth programs Ghana" />
   <meta name="author"   content="ThriveWorks Ghana" />
   <meta name="subject"        content="Nonprofit organisation, effective charity, high-impact NGO, youth empowerment, Ghana, West Africa, Africa" />
   <meta name="classification" content="Nonprofit, NGO, Charity, Youth Development, Community Impact, Ghana, Africa" />
@@ -513,6 +513,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-transform: uppercase;
       color: var(--cream);
       line-height: 1.4;
+    }
+
+    /* Trained -> graduated -> employed loop */
+    .loop-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .loop-step {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(192,154,90,0.25);
+      border-radius: 8px;
+      padding: 22px 24px;
+      text-align: center;
+      min-width: 150px;
+    }
+
+    .loop-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .loop-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    .loop-arrow {
+      color: var(--gold);
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .loop-flow { gap: 10px; }
+      .loop-arrow { transform: rotate(90deg); }
     }
 
     /* Secondary row: gender split + total invested */
@@ -1094,6 +1141,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div id="impact-content">
 
+        <div class="loop-flow">
+          <div class="loop-step">
+            <div class="loop-number">142</div>
+            <div class="loop-label">Youth Trained</div>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step">
+            <div class="loop-number">90</div>
+            <div class="loop-label">Graduated</div>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step">
+            <div class="loop-number">93%</div>
+            <div class="loop-label">Employed or Continuing Education</div>
+          </div>
+        </div>
+
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-number" id="stat-beneficiaries">142</div>
@@ -1252,9 +1316,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <p class="section-intro" style="margin-top:30px;margin-bottom:0;">
-      Put together, that combination of a high program-spending ratio, strong graduate outcomes, and
-      durable, multi-year support is why we're regarded as one of the most efficient and impactful
-      youth nonprofits operating in Ghana and West Africa today.
+      Put together, that's a high program-spending ratio, strong graduate outcomes, and durable,
+      multi-year support. We'd rather you judge us on those numbers than on anything we say about
+      ourselves.
     </p>
   </section>
 
@@ -1275,6 +1339,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <button class="outline-btn">Other Ways to Support</button>
         </a>
       </div>
+      <p style="font-size:0.8rem;opacity:0.75;margin-top:14px;">
+        One-time or monthly, and tax-deductible in the US through our fiscal sponsor, Urban Promise International.
+      </p>
     </div>
   </div>
 
