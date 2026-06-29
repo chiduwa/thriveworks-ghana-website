@@ -1018,6 +1018,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (data.success) {
               status.textContent = "Thanks, your message is on its way. We'll be in touch soon.";
               status.className = 'form-status success';
+              window.dataLayer = window.dataLayer || [];
+              window.dataLayer.push({ event: 'partnership_form_submit' });
               form.reset();
             } else {
               status.textContent = 'Something went wrong sending your message. Please email info@thriveworksghana.org directly.';
