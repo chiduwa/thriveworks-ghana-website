@@ -30,6 +30,32 @@ jobs:
             "https://www.bing.com/ping?sitemap=https://thriveworksghana.org/sitemap.xml")
           echo "Bing ping → HTTP $STATUS"
 
+      - name: Ping Bing via IndexNow
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://www.bing.com/indexnow?url=https%3A%2F%2Fthriveworksghana.org%2Fsitemap.xml&key=f7028816fcaca029f40f763ff3e2e04b")
+          echo "Bing IndexNow ping → HTTP $STATUS"
+
+      - name: Submit full site URL list to IndexNow
+        run: |
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "thriveworksghana.org",
+              "key": "f7028816fcaca029f40f763ff3e2e04b",
+              "keyLocation": "https://thriveworksghana.org/f7028816fcaca029f40f763ff3e2e04b.txt",
+              "urlList": [
+                "https://thriveworksghana.org",
+                "https://thriveworksghana.org/technical-skills",
+                "https://thriveworksghana.org/entrepreneurship",
+                "https://thriveworksghana.org/mentorship",
+                "https://thriveworksghana.org/alumni",
+                "https://thriveworksghana.org/impact",
+                "https://thriveworksghana.org/journey",
+                "https://thriveworksghana.org/get-involved"
+              ]
+            }' | echo "IndexNow full-site submission complete"
+
   # ── 2. LIGHTHOUSE CI ────────────────────────────────────────────────────────
   # Runs weekly only (Monday 8 AM UTC). Results are saved as GitHub artifacts —
   # download the HTML report from the Actions tab → the run → Artifacts section.
@@ -132,3 +158,5 @@ jobs:
             -o /dev/null -w "Google ping → HTTP %{http_code}\n"
           curl -s "https://www.bing.com/ping?sitemap=https://thriveworksghana.org/sitemap.xml" \
             -o /dev/null -w "Bing ping → HTTP %{http_code}\n"
+          curl -s "https://www.bing.com/indexnow?url=https%3A%2F%2Fthriveworksghana.org%2Fsitemap.xml&key=f7028816fcaca029f40f763ff3e2e04b" \
+            -o /dev/null -w "Bing IndexNow ping → HTTP %{http_code}\n"
